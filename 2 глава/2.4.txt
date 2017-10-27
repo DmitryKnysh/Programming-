@@ -1,0 +1,15 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int main()
+{
+	int calsius;
+	double fahrenheit;
+	cout << "Please, enter a Calsius value:";
+	cin >> calsius;
+	fahrenheit = 1.8 * calsius + 32.0;
+	cout << calsius << " degrees Calsius is " << fahrenheit << " degrees Fahrenheit. ";
+	cin.get();
+	cin.get();
+	return(0);
+}

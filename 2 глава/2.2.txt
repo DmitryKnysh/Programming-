@@ -1,0 +1,15 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int main ()
+{	
+	int farlong;
+	setlocale(LC_ALL, "Russian");
+	cout<< "Введите расстояние в фарлонгах:" ;
+	cin >> farlong;
+	cout << "Расстояние в ярдах:" << farlong * 220 <<endl;
+	cin.get();
+	cin.get();
+	return 0;
+}
+

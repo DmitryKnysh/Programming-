@@ -1,0 +1,12 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+
+int main ()
+{	
+	cout<< "Dmitry Knysh." << endl;
+	cout<< "Kazanskoe highway 12.";
+	cin.get();
+	return 0;
+}
