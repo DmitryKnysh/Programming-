@@ -1,0 +1,16 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+const int ft = 12;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int ;
+	cout << "Введите ваш рост в дюймах:";
+	cin >> growth; 
+	cout << "Ваш рост " << growth / ft << " фут(ов) и " << growth % ft << " дюйм(ов)";
+	cin.get();
+	cin.get();
+	return(0);
+}
+

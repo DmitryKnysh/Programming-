@@ -1,0 +1,19 @@
+#include "stdafx.h"
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	double km, litrs;
+	cout << "Введите расстояние в километрах: ";
+	cin >> km;
+	cout << "Введите расход топлива в литрах: ";
+	cin >> litrs;
+	cout << "Расход топлива на 100 километров: " << (litrs * 100) / km << endl;
+	cin.get();
+	cin.get();
+	return 0;
+}

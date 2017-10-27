@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+const int ft = 12;
+const double mt = 0.0254;
+const int kg = 2.2;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int growthFoot; int growthInch; int weight; double bmi;
+	cout << "Введите ваш рост в футах и дюймах(через пробел):";
+	cin >> growthFoot >> growthInch;
+	cout << "Введите ваш вес в фунтах:";
+	cin >> weight;
+	cout << "Ваш индекс массы тела: " << (double(weight) / kg) / (pow((growthFoot * ft + growthInch) * mt, 2)) ;
+	cin.get();
+	cin.get();
+	return(0);
+}
