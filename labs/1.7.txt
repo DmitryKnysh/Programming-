@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double xn, xk, dx, a, b, c;
+	cin >> xn >> xk >> dx >> a >> b >> c;
+	if (int(a) | int(b) ^ (int(a) | int(c)) != 0) {
+		for (double x = xn; x <= xk; x += dx) {
+			double f;
+			if (x < 5 && c != 0) f = -a*pow(x, 2) - b;
+			else if (x > 5 && c == 0) f = (x - a) / x;
+			else f = -x / c;
+			cout << "x = " << x << "\tf = " << f << endl;
+			cin.get();
+		}
+	}
+	else {
+		for (double x = xn; x <= xk; x += dx) {
+			int f;
+			if (x < 5 && c != 0) f = -a*pow(x, 2) - b;
+			else if (x > 5 && c == 0) f = (x - a) / x;
+			else f = -x / c;	
+			cout << "x = " << x << "\tf = " << f << endl;
+			cin.get();
+		}
+		cin.get();
+	}
+	cin.get();
+	return 0;
+}

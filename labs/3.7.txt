@@ -1,0 +1,46 @@
+#include "stdafx.h"
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	setlocale(LC_ALL, "ru");
+	const int n = 8;
+	int k = 0; int b = 0;
+	int sum = 0; 
+	int massive[n][n];
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			massive[i][j] = -2 + rand() % 10;
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			cout << massive[i][j] << " ";
+		}
+		cout << endl;
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (massive[i][j] == massive[j][i]) { k++; }
+		}
+		if (k == n) { cout <<"Номер k-ой страки и k-ого столбца , элементы которых совпадают:" << i + 1 << endl; }
+		k = 0;
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			sum += massive[i][j];
+			if (massive[i][j] < 0)
+			{
+				b++;
+			}
+		}
+		if (b > 0) { cout << "Сумма " << i + 1 << " строки:"<< sum << endl; }
+		sum = 0; b = 0;
+	}
+	system("pause");
+	return 0;
+}
+
