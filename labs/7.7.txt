@@ -2,36 +2,14 @@
 #include <iostream>
 #include <ctime>
 using namespace std;
-void function1(int m , int **a, int k = 0)
-{
-	for (int i = 0; i < m; i++) {
-		for (int j = 0; j < m; j++) {
-			if (a[i][j] == a[j][i]) { k++; }
-		}
-		if (k == m) { cout << "Номер k-ой страки и k-ого столбца , элементы которых совпадают:" << i + 1 << endl; }
-		k = 0;
-	}
-}
-void function2(int m , int **a, int sum = 0, int b = 0 )
-{	
-	for (int i = 0; i < m; i++) {
-		for (int j = 0; j < m; j++) {
-			sum += a[i][j];
-			if (a[i][j] < 0)
-			{
-				b++;
-			}
-		}
-		if (b > 0) { cout << "Сумма " << i + 1 << " строки:" << sum << endl; }
-		sum = 0; b = 0;
-	}
-}
 
 int main()
 {
 	srand(time(NULL));
 	setlocale(LC_ALL, "ru");
 	const int n = 8;
+	int k = 0; int b = 0;
+	int sum = 0;
 	int **massive = new int *[n];
 	for (int i = 0; i < n; i++)
 	{
@@ -48,8 +26,25 @@ int main()
 		}
 		cout << endl;
 	}
-	function1(n, massive);
-	function2(n, massive);
-system("pause");
-return 0;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (massive[i][j] == massive[j][i]) { k++; }
+		}
+		if (k == n) { cout << "Номер k-ой страки и k-ого столбца , элементы которых совпадают:" << i + 1 << endl; }
+		k = 0;
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			sum += massive[i][j];
+			if (massive[i][j] < 0)
+			{
+				b++;
+			}
+		}
+		if (b > 0) { cout << "Сумма " << i + 1 << " строки:" << sum << endl; }
+		sum = 0; b = 0;
+	}
+	delete[] massive;
+	system("pause");
+	return 0;
 }
