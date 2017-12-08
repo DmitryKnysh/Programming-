@@ -1,50 +1,64 @@
 #include "stdafx.h"
 #include <iostream>
-#include <ctime>
+#include <cstdlib>
 using namespace std;
 
-int main()
-{
-	srand(time(NULL));
-	setlocale(LC_ALL, "ru");
-	const int n = 8;
-	int k = 0; int b = 0;
-	int sum = 0;
-	int **massive = new int *[n];
-	for (int i = 0; i < n; i++)
+struct Train {
+	int number;
+	char path[10];
+	int hour;
+	int min;
+};
+const int N = 8;
+Train* trainbase = new Train[N];
+Train t;
+int main() {
+	setlocale(LC_ALL, "Russian");
+	Train trains[8];
+
+	for (int i = 0; i < N; i++) {
+		cout << "Введите пункт назначения поезда " << i + 1 << ": ";
+		cin >> trains[i].path;
+		cout << "Введите номер для поезда " << i + 1 << ": ";
+		cin >> trains[i].number;
+		cout << "Введите время отправления для поезда (часы) " << i + 1 << ": ";
+		cin >> trains[i].hour;
+		cout << "Введите время отправления для поезда (минуты) " << i + 1 << ": ";
+		cin >> trains[i].min;
+	}
+	for (int i = 0; i < N; i++)
 	{
-		massive[i] = new int[n];
-	}
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			massive[i][j] = -2 + rand() % 10;
-		}
-	}
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			cout << massive[i][j] << "  ";
-		}
-		cout << endl;
-	}
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			if (massive[i][j] == massive[j][i]) { k++; }
-		}
-		if (k == n) { cout << "Номер k-ой страки и k-ого столбца , элементы которых совпадают:" << i + 1 << endl; }
-		k = 0;
-	}
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			sum += massive[i][j];
-			if (massive[i][j] < 0)
+		for (int j = i + 1; j < N; j++)
+		{
+			if (strcmp(trains[i].path, trains[j].path)>0)
 			{
-				b++;
+				Train tmp = trains[i];
+				trains[i] = trains[j];
+				trains[j] = tmp;
 			}
 		}
-		if (b > 0) { cout << "Сумма " << i + 1 << " строки:" << sum << endl; }
-		sum = 0; b = 0;
 	}
-	delete[] massive;
+	for (int i = 0; i < N; ++i)
+	{
+		cout << " Пункт назначения: " << trains[i].path << "   номер: " << trains[i].number << "   Время отправления: " << trains[i].hour << ":" << trains[i].min << endl << endl;
+	}
+	int time_h;
+	int time_min;
+	int k = 0;
+	cout << "Введите ваше время (часы затем минуты)" << endl;
+	cin >> time_h >> time_min;
+	cout << " Ваше время:" << time_h << ":" << time_min << endl << endl;
+	for (int i = 0; i < N; i++)
+	{
+		if ((time_h < trains[i].hour) || (time_h == trains[i].hour && time_min < trains[i].min))
+		{
+			cout << " Следующие поезда отправятся после вашего времени: " << "№ поезда - " << trains[i].number << " с временем " << trains[i].hour << ":" << trains[i].min << endl;
+			k++;
+		}
+	}
+	if (k == 0)
+		cout << " Нет подходящих поездов" << endl;
+	delete[] trainbase;
 	system("pause");
 	return 0;
 }
