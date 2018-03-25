@@ -1,0 +1,34 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+class Profit
+{
+private:
+	int profit;
+public:
+	Profit() : profit(0)
+	{}
+	Profit(int c) : profit(c)	
+	{}
+	int getprofit()
+	{		
+		return profit;	
+	}
+	Profit operator ++ ()
+	{		
+		return Profit(++profit);	
+	}
+};
+int main()
+{
+	setlocale(0, "");
+	Profit a;
+	Profit b;
+	cout << a.getprofit() << endl;
+	a++; 	b = ++a;
+	cout << b.getprofit() << endl;
+	cout << a.getprofit() << endl;
+	system("pause");
+	return 0;
+}

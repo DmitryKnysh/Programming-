@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+
+class Profit
+{
+private:
+	int current_profit;
+	int the_next_profit;
+
+public:
+	
+	void set()
+	{
+		cout << "Введите текущую прибыль: ";
+		cin >> current_profit; 
+		cout << "Введите следующую прибыль: ";
+		cin >> the_next_profit;
+	}
+
+	void get()
+	{
+		cout << "Текущая прибыль: " << current_profit << endl;
+		cout << "Следующая прибыль: " << the_next_profit << endl;
+	}
+
+};
+
+
+int main()
+{
+	setlocale(0, "");
+	Profit first_person;
+	first_person.set();
+	first_person.get();
+	system("pause");
+	return 0;
+}

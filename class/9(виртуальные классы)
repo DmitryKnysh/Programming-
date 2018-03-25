@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+class Profit{public:	virtual void takeprofit()	{		cout << "Получи прибыль! "  << endl;	}};class Director : public Profit{public:	void takeprofit()	{		cout << "Директор получил прибыль! " << endl;	}};class Developer : public Profit{public:	void takeprofit()	{		cout << "Разработчик получил прибыль! " << endl;	}};class Manager : public Profit{public:	void takeprofit()	{		cout << "Менеджер получил прибыль! " << endl;	}};
+int main()
+{
+	setlocale(0, "");	Profit* pro;
+	Developer* dev = new Developer;
+	Manager* man = new Manager;
+	Director* dir = new Director;
+	pro = dev;
+	pro->takeprofit();
+	pro = man;
+	pro->takeprofit();
+	pro = dir;
+	pro->takeprofit();
+	system("pause");
+	return 0;
+}

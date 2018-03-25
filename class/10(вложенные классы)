@@ -1,0 +1,36 @@
+#include"stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+class ProfitMonitoring {
+private:
+	class Profit {
+	private:
+		int money, bonus; 
+	public:
+		Profit(int money, int bonus) {
+			this->money = money;
+			this->bonus = bonus;
+		}
+		string getInfo()
+		{
+			return  "Profit: money = " + to_string(money) + " bonus = " + to_string(bonus);
+		};
+	};
+static const int size = 3;
+Profit profits[size]{
+		Profit(15000,4200), Profit(15000,6700),Profit(15000,7000) };
+public:	void getProfitInfo() {
+		for (int i = 0; i < size; i++) {
+			cout << profits[i].getInfo() << endl;
+		}
+	}
+};
+int main() {
+	setlocale(0, "");
+	ProfitMonitoring a;
+	a.getProfitInfo();
+	system("pause");
+	return 0;
+}

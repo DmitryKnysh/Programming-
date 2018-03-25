@@ -1,0 +1,32 @@
+#include "stdafx.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Receiving_a_profit;
+class Profit
+{
+	friend class Receiving_a_profit;
+private:
+	int current_profit = 15000;
+	int the_next_profit = 28000;
+};
+class Receiving_a_profit
+{
+public:
+	void get(Profit &p) {
+		p.current_profit -= 7000;
+		p.the_next_profit += 3200;
+		cout << "Выручка в текущем месяце: " << p.current_profit << endl << "Выручка в следующем месяце: " << p.the_next_profit << endl;
+	}
+};
+
+int main()
+{
+	setlocale(0, "");
+	Profit first_person;
+	Receiving_a_profit Profit_first_person;
+	Profit_first_person.get(first_person);
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,64 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+
+class Profit
+{
+private:
+	int static xxxprofit;
+	int current_profit;
+	int the_next_profit;
+
+public:
+	//Конструкторы
+	Profit() : current_profit(5000), the_next_profit(5000)
+	{
+		xxxprofit = 1000000;
+	}
+	Profit(int a, int b) : current_profit(a), the_next_profit(b)
+	{
+		xxxprofit = 600000;
+	}
+	Profit(int a) : current_profit(a)
+	{
+		the_next_profit = a + 25000;
+		xxxprofit = 550000;
+	}
+	void set()
+	{
+		cout << "Введите текущую прибыль: ";
+		cin >> current_profit; 
+		cout << "Введите следующую прибыль: ";
+		cin >> the_next_profit;
+	}
+
+	void get()
+	{
+		cout << "Текущая прибыль: " << current_profit << endl;
+		cout << "Следующая прибыль: " << the_next_profit << endl;
+	}
+	//Деструктор
+	~Profit()
+	{
+		cout << "Class is not working!" << endl;
+		cin.get();
+	}
+	void get_stat()
+	{
+		cout << xxxprofit << endl;
+	}
+};
+int Profit::xxxprofit;
+int main()
+{
+	setlocale(0, "");
+	Profit first_person;
+	Profit second_person(15000,18000);
+	Profit third_person(15000);
+	first_person.get_stat();
+	second_person.get_stat();
+	third_person.get_stat();
+	system("pause");
+	return 0;
+}
