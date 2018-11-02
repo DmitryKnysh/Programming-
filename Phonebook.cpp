@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <string>
 #include <iterator>
 #include <algorithm>
 #include <vector>
@@ -78,7 +79,7 @@ int main() {
 	addElement(record, "Natalia", "Andrey", "07.09.2018", "19:05", 23);
 	addElement(record, "Vova", "Gena", "02.09.2018", "13:28", 87);
 	int n;
-	cout << "Êàêîé âûçîâ âû õîòèòå óäàëèòü ?";
+	cout << "ÃŠÃ ÃªÃ®Ã© Ã¢Ã»Ã§Ã®Ã¢ Ã¢Ã» ÃµÃ®Ã²Ã¨Ã²Ã¥ Ã³Ã¤Ã Ã«Ã¨Ã²Ã¼ ?";
 	cin >> n;
 	deletedElement(record, n);
 	sortDate(record);
