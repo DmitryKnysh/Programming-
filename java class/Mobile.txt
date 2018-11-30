@@ -1,0 +1,18 @@
+import com.sun.org.apache.xpath.internal.operations.String;
+
+public class Mobile {
+    String color;
+    String weight;
+    String typeofbattery;
+    String typeofphone;
+    Mobile(String color, String weight, String typeofbattery,String typeofphone) {
+        this.color = color;
+        this.weight = weight;
+        this.typeofbattery = typeofbattery;
+        this.typeofphone = typeofphone;
+    }
+
+    void getInfo() {
+        System.out.printf("Цвет: %s\n" + "Вес: %s\n" + "Тип батареи: %s\n" + "Тип телефона: %s\n", color, weight, typeofbattery, typeofphone);
+    }
+}

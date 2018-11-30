@@ -1,0 +1,13 @@
+import com.sun.org.apache.xpath.internal.operations.String;
+
+public class Model extends Mobile{
+    String model;
+    Model(String color, String weight, String typeofbattery,String typeofphone, String brand,String model) {
+        super(color, weight, typeofbattery, typeofphone);
+        this.model = model;
+    }
+    @Override
+    void getInfo() {
+        System.out.printf("Цвет: %s\n" + "Вес: %s\n" + "Тип батареи: %s\n" + "Тип телефона: %s\n" + "Модель : %s\n\n", color, weight, typeofbattery, typeofphone,model);
+    }
+}

@@ -1,0 +1,9 @@
+import com.sun.org.apache.xpath.internal.operations.String;
+public class Main {
+    public static void main(String args[]) {
+        Model model = new Model("Blue", "144", "Li-Ion", "Slider", "A52");
+        model.getInfo();
+
+        Siemens siemens = new Siemens("Blue","144","Li-Ion","Slider","Siemens");
+    }
+}
