@@ -1,0 +1,78 @@
+<?import sample.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0" fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+  </padding>
+  <Label style="-fx-font: NORMAL 20 Tahoma;" text="Phonebook" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+  <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <columns>
+      <TableColumn prefWidth="100.0" text="FROM" fx:id="FROMColumn">
+        <cellFactory>
+          <TableFormatted alignment="CENTER" />
+        </cellFactory>
+        <cellValueFactory>
+          <PropertyValueFactory property="FROM" />
+        </cellValueFactory>
+      </TableColumn>
+      <TableColumn prefWidth="100.0" text="TO">
+        <cellFactory>
+          <TableFormatted alignment="CENTER" />
+        </cellFactory>
+        <cellValueFactory>
+          <PropertyValueFactory property="TO" />
+        </cellValueFactory>
+      </TableColumn>
+      <TableColumn prefWidth="100.0" text="DATA">
+        <cellFactory>
+          <TableFormatted alignment="CENTER" />
+        </cellFactory>
+        <cellValueFactory>
+          <PropertyValueFactory property="DATA" />
+        </cellValueFactory>
+      </TableColumn>
+      <TableColumn prefWidth="100.0" text="TIME">
+        <cellFactory>
+          <TableFormatted alignment="CENTER" />
+        </cellFactory>
+        <cellValueFactory>
+          <PropertyValueFactory property="TIME" />
+        </cellValueFactory>
+      </TableColumn>
+      <TableColumn prefWidth="100.0" text="DURATION">
+        <cellFactory>
+          <TableFormatted alignment="CENTER" />
+        </cellFactory>
+        <cellValueFactory>
+          <PropertyValueFactory property="DURATION" />
+        </cellValueFactory>
+      </TableColumn>
+    </columns>
+    <items>
+      <FXCollections fx:factory="observableArrayList">
+        <User DATA="25.06.2018" FROM="Anastasia" TO="Michail" TIME="16:00" DURATION="71" />
+        <User DATA="2.12.2018"  FROM="Vladimir" TO="Evgeniy" TIME="15:34" DURATION="86" />
+        <User DATA="31.06.2018" FROM="Victor" TO="Maria" TIME="8:10" DURATION="62" />
+        <User DATA="15.03.2018" FROM="Roman" TO="Nikolay" TIME="21:21" DURATION="100" />
+        <User DATA="25.08.2018" FROM="Dmitry" TO="Valeria" TIME="12:01" DURATION="23"/>
+      </FXCollections>
+    </items>
+    <sortOrder>
+      <fx:reference source="FROMColumn" />
+    </sortOrder>
+  </TableView>
+  <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+    <TextField fx:id="FROM" prefWidth="70.0" promptText="FROM" />
+    <TextField fx:id="TO" prefWidth="70.0" promptText="TO" />
+    <TextField fx:id="DATA" prefWidth="70.0" promptText="DATA" />
+    <TextField fx:id="TIME" prefWidth="70.0" promptText="TIME" />
+    <TextField fx:id="DURATION" prefWidth="110.0" promptText="DURATION" />
+    <Button onAction="#addPerson" text="Add" />
+  </HBox>
+</GridPane>
