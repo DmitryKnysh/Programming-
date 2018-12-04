@@ -56,10 +56,10 @@
     </columns>
     <items>
       <FXCollections fx:factory="observableArrayList">
-        <User DATA="25.06.2018" FROM="Anastasia" TO="Michail" TIME="16:00" DURATION="71" />
-        <User DATA="2.12.2018"  FROM="Vladimir" TO="Evgeniy" TIME="15:34" DURATION="86" />
-        <User DATA="31.06.2018" FROM="Victor" TO="Maria" TIME="8:10" DURATION="62" />
-        <User DATA="15.03.2018" FROM="Roman" TO="Nikolay" TIME="21:21" DURATION="100" />
+        <User DATA="10.06.2014" FROM="Anastasia" TO="Michail" TIME="16:00" DURATION="71" />
+        <User DATA="15.12.2015"  FROM="Vladimir" TO="Evgeniy" TIME="15:34" DURATION="86" />
+        <User DATA="18.06.2016" FROM="Victor" TO="Maria" TIME="08:10" DURATION="62" />
+        <User DATA="23.03.2017" FROM="Roman" TO="Nikolay" TIME="21:21" DURATION="92" />
         <User DATA="25.08.2018" FROM="Dmitry" TO="Valeria" TIME="12:01" DURATION="23"/>
       </FXCollections>
     </items>
